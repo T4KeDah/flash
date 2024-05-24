@@ -1,0 +1,52 @@
+
+    <!DOCTYPE html>
+    <html>
+        <head>
+            <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+            <meta name="robots" content="noindex, nofollow">
+            <meta name="googlebot" content="noindex, nofollow">
+            <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.1/jquery.min.js"> </script>
+            <script type="text/javascript" async="true">
+                function additem(event){
+    event.preventDefault();
+     const userDetails = {
+    todo: event.target.Todo.value,
+    describe: event.target.descrip.value,
+  };
+  
+  const item=document.createElement("li");
+  item.appendChild(document.createTextNode(${userDetails.todo}-${userDetails.describe}));
+  const list =getElementById("list");
+  list.appendChild(item);
+  
+    // Clearing the input fields
+  document.getElementById("Todo").value = "";
+  document.getElementById("descrip").value = "";
+  
+}
+            </script>
+            <style type="text/css">
+                .welcome {
+        color:black;
+        font-size:36px;
+        font-family:cursive;
+        text-align:center;
+        padding:20px;
+    }
+            </style>
+        </head>
+        <body>
+            <div class='welcome'>To-Do List</div>
+<form onsubmit="additem(eventdescrip)">
+    <label id='Todo'>TodoName</label>
+<input type='text' id='Todo'>
+<label for="descrip">Description</label>
+<input type="text" id="descrip"></input>
+<button type="submit">Add Item</button>
+</form>
+<ul id="list">
+    
+</ul>
+
+        </body>
+    </html>
