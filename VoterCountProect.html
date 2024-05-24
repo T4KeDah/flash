@@ -1,0 +1,98 @@
+
+    <!DOCTYPE html>
+    <html>
+        <head>
+            <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+            <meta name="robots" content="noindex, nofollow">
+            <meta name="googlebot" content="noindex, nofollow">
+            <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.1/jquery.min.js"> </script>
+            <script type="text/javascript" async="true">
+                function votesubmission(event){
+    event.preventDefault();
+  const voterDetails = {
+    username: event.target.username.value,
+    vote: event.target.vote.value,
+  };
+  axios
+    .post(
+      "https://crudcrud.com/api/ae9549add0ec4d76a2b0a095d03bbadd/userdetails",
+      voterDetails
+    )
+    .then((response) => displayUserOnScreen(response.data))
+    .catch((error) => console.log(error));
+
+  // Clearing the input fields
+  document.getElementById("username").value = "";
+}
+
+function displayUserOnScreen(voterDetails) {
+    if(voterDetails.username="Suresh"){
+    const list=document.getElementById("contender1")
+   const userItem = document.createElement("li");
+   userItem.appendChild(createTextNode($(username.voterDetails)));
+  list.appendChild(userItem);
+    }
+    else if(voterDetails.username="Depank"){
+        const list=document.getElementById("contender2")
+   const userItem = document.createElement("li");
+   userItem.appendChild(createTextNode($(username.voterDetails)));
+  list.appendChild(userItem);
+    }
+    else{
+        const list=document.getElementById("contender3")
+   const userItem = document.createElement("li");
+   userItem.appendChild(createTextNode($(username.voterDetails)));
+  list.appendChild(userItem);
+    }
+
+  //function function1() {
+ // var ul = document.getElementById("list");
+ // var li = document.createElement("li");
+ // li.appendChild(document.createTextNode("Element 4"));
+}
+    
+
+            </script>
+            <style type="text/css">
+                .welcome {
+        color:black;
+        font-size:36px;
+        font-family:cursive;
+        text-align:center;
+        padding:20px;
+    }
+            </style>
+        </head>
+        <body>
+            <div class='welcome'>Class Monitor Vote</div>
+<form onsubmit="votesubmission(event)">
+    <label for='username'>Name :</label>
+<input type='text' placeholder='Enter Name' id='username'></form>
+<label for="voter">Voter</label>
+<select id="voter">
+    <option value="Suresh">Suresh</option>
+  <option value="Depank">Depank</option>
+  <option value="Abhik">Abhik</option>
+</select>
+<button type="submit">Vote</button>
+</form>
+ 
+ 
+ 
+
+    
+
+
+
+    <h2>Suresh</h2>
+    <ul id="contender1">
+    </ul>
+    <h2>Depank</h2>
+    <ul id="contender2">
+    </ul>
+
+    <h2>Abhik</h2>
+    <ul id="contender3"></ul>
+
+        </body>
+    </html>
