@@ -1,0 +1,47 @@
+<!-- index.html -->
+<!DOCTYPE html> 
+<html> 
+
+<head> 
+	<title>Expense Tracker</title> 
+	<link rel="stylesheet"
+		type="text/css"
+		href="cssexp.css" /> 
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head> 
+
+<body> 
+	<div class="container"> 
+		<h1>Expense Tracker</h1> 
+		<form id="expense-form"> 
+			<input type="text"
+				id="expense-name"
+				placeholder="Expense Name" required class="form-control"/>  
+			<input type="number"
+				id="expense-amount"
+				placeholder="Amount" required class="form-control"/> 
+			<button type="submit" class="btn btn-primary"> 
+				Add Expense 
+			</button> 
+		</form> 
+		<div class="expense-table"> 
+			<table class="table table-bordered border-primary"> 
+				<thead> 
+					<tr> 
+						<th>Expense Name</th> 
+						<th>Amount</th> 
+						<th>Action</th> 
+					</tr> 
+				</thead> 
+				<tbody id="expense-list"></tbody> 
+			</table> 
+			<div class="total-amount"> 
+				<strong>Total:</strong> 
+				$<span id="total-amount">0</span> 
+			</div> 
+		</div> 
+	</div> 
+	<script src="jsexp.js"></script> 
+</body> 
+
+</html>
